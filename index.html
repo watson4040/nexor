@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Nexor Labs delivers smart digital solutions: web development, mobile apps, UI/UX design, network installations, and ICT support for schools & businesses in Lusaka. Modern, reliable, and client-focused.">
+  <meta name="keywords" content="Nexor Labs, web development Lusaka, mobile app development, UI/UX design, network installation, ICT support, school websites, business solutions Zambia">
+  <meta name="author" content="Nexor Labs">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Nexor Labs | Smart Solutions for the Digital World">
+  <meta property="og:description" content="We build websites, apps, and networks that help businesses grow. Reliable, affordable, and professional.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=630&fit=crop">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Nexor Labs | Smart Digital Solutions & ICT Support</title>
+  
+  <!-- Bootstrap 5 + Icons + Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    /* Navbar */
+    .navbar {
+      background: #0a0f1c !important;
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+    }
+    .navbar-brand {
+      font-size: 1.7rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #FFFFFF, #3b82f6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent !important;
+      font-weight: 800;
+    }
+    .nav-link {
+      font-weight: 500;
+      margin: 0 0.3rem;
+      transition: 0.2s;
+    }
+    .nav-link:hover {
+      color: #3b82f6 !important;
+      transform: translateY(-2px);
+    }
+    /* Hero section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);
+      top: -50%;
+      left: -50%;
+      animation: pulse 10s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: scale(1);}
+      100% { opacity: 0.7; transform: scale(1.1);}
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .btn-custom {
+      background: #3b82f6;
+      border: none;
+      padding: 12px 32px;
+      font-weight: 600;
+      border-radius: 40px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(59,130,246,0.4);
+    }
+    .btn-custom:hover {
+      background: #2563eb;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(59,130,246,0.3);
+    }
+    .btn-outline-custom {
+      border: 2px solid #3b82f6;
+      background: transparent;
+      color: white;
+      border-radius: 40px;
+      padding: 10px 28px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .btn-outline-custom:hover {
+      background: #3b82f6;
+      transform: translateY(-2px);
+    }
+    /* cards */
+    .service-card {
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      background: white;
+      border: none;
+      cursor: pointer;
+    }
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 28px 35px -12px rgba(0,0,0,0.2);
+    }
+    .card-icon {
+      font-size: 3.2rem;
+      color: #3b82f6;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .service-card .card-body {
+      padding: 1.8rem;
+    }
+    /* about section */
+    .bg-tech {
+      background: linear-gradient(120deg, #0f172a, #1e1b4b);
+    }
+    /* contact form */
+    .contact-form {
+      background: white;
+      border-radius: 32px;
+      padding: 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+    }
+    .form-control, .form-select {
+      border-radius: 20px;
+      padding: 12px 20px;
+      border: 1px solid #e2e8f0;
+      transition: 0.2s;
+    }
+    .form-control:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    }
+    .btn-submit {
+      background: #0f172a;
+      border-radius: 40px;
+      padding: 12px 32px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-submit:hover {
+      background: #3b82f6;
+      transform: scale(1.02);
+    }
+    /* floating whatsapp */
+    .float-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.2);
+      transition: 0.2s;
+      z-index: 100;
+      text-decoration: none;
+    }
+    .float-wa:hover {
+      transform: scale(1.1);
+      background: #128C7E;
+    }
+    /* back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      background: #0f172a;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 99;
+      text-decoration: none;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      background: #3b82f6;
+      transform: translateY(-4px);
+    }
+    footer .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      margin: 0 8px;
+      transition: 0.2s;
+      color: white;
+      font-size: 1.3rem;
+    }
+    footer .social-icons a:hover {
+      background: #3b82f6;
+      transform: translateY(-4px);
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .service-card:hover { transform: translateY(-6px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/260964173406?text=Hello%20Nexor%20Labs%2C%20I%20need%20help%20with%20a%20digital%20project%20(website%2C%20app%2C%20network%20or%20ICT%20support)." 
+   class="float-wa" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back to Top Button -->
+<a href="#" id="backToTop" class="back-to-top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">NEXOR LABS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<header id="home" class="hero d-flex align-items-center text-white">
+  <div class="container text-center">
+    <h1 class="display-3 fw-bold">Smart Solutions for the Digital World</h1>
+    <p class="lead mt-4 mx-auto" style="max-width: 700px;">
+      We build modern websites, powerful mobile apps, and reliable ICT networks — helping businesses and schools grow with technology.
+    </p>
+    <div class="mt-4 d-flex gap-3 justify-content-center flex-wrap">
+      <a href="#contact" class="btn btn-custom btn-lg">Start Your Project</a>
+      <a href="#services" class="btn btn-outline-custom btn-lg">Explore Services</a>
+    </div>
+  </div>
+</header>
+
+<!-- Services Section -->
+<section id="services" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-5">What We Deliver</h2>
+      <p class="lead text-secondary">Modern, scalable, and client-focused digital solutions disigned for today's world.</p>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-4">
+        <div class="card service-card h-100 text-center">
+          <div class="card-icon"><i class="fas fa-code"></i></div>
+          <div class="card-body">
+            <h4 class="fw-bold">Web Development</h4>
+            <p class="text-muted">Responsive websites, school portals, business landing pages – built with speed and SEO in mind.</p>
+            <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill mt-2">Get a Quote →</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card h-100 text-center">
+          <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="card-body">
+            <h4 class="fw-bold">App Development</h4>
+            <p class="text-muted">Custom Android & iOS apps for schools, e-commerce, and internal business operations.</p>
+            <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill mt-2">Discuss App →</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card h-100 text-center">
+          <div class="card-icon"><i class="fas fa-paint-brush"></i></div>
+          <div class="card-body">
+            <h4 class="fw-bold">UI/UX Design</h4>
+            <p class="text-muted">Beautiful, user-friendly interfaces that engage visitors and increase conversions.</p>
+            <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill mt-2">Start Design →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-5 mt-2">
+      <div class="col-md-6">
+        <div class="card service-card h-100 text-center">
+          <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+          <div class="card-body">
+            <h4 class="fw-bold">Network & ICT Support</h4>
+            <p class="text-muted">LAN installation, computer lab setup, file sharing, and ongoing IT support for schools and offices.</p>
+            <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill mt-2">Request Support →</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card service-card h-100 text-center">
+          <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
+          <div class="card-body">
+            <h4 class="fw-bold">School Digital Solutions</h4>
+            <p class="text-muted">Complete school websites with enrollment forms, parent portals, and fee management integration.</p>
+            <a href="#contact" class="btn btn-sm btn-outline-primary rounded-pill mt-2">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section (to look credible) -->
+<section id="portfolio" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-5">Recent Projects</h2>
+      <p class="lead text-secondary">Real solutions we delivered for local clients.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-school fa-3x text-primary mb-3"></i>
+            <h5 class="fw-bold">Furaxpark Academy</h5>
+            <p class="text-muted">Complete school website with online enrollment form & mobile responsive design.</p>
+            <span class="badge bg-primary rounded-pill">Website</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-computer fa-3x text-primary mb-3"></i>
+            <h5 class="fw-bold">Petku Academy</h5>
+            <p class="text-muted">6‑computer LAN setup, file sharing configuration & ICT support training.</p>
+            <span class="badge bg-primary rounded-pill">Network</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body text-center">
+            <i class="fas fa-store fa-3x text-primary mb-3"></i>
+            <h5 class="fw-bold">Lusaka Hardware Hub</h5>
+            <p class="text-muted">E‑commerce website + WhatsApp integration for orders.</p>
+            <span class="badge bg-primary rounded-pill">Web + Commerce</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="#contact" class="btn btn-outline-primary rounded-pill px-4 py-2">View Full Portfolio →</a>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="bg-tech text-white py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold display-5 mb-4">Why Nexor Labs?</h2>
+    <p class="lead mx-auto" style="max-width: 750px;">
+      We are a Lusaka‑based tech company focused on delivering reliable, affordable, and modern digital solutions. From websites to network installations, we work closely with schools and businesses to ensure every project succeeds.
+    </p>
+    <div class="row mt-5 g-4">
+      <div class="col-md-4">
+        <i class="fas fa-rocket fa-2x mb-2"></i>
+        <h5>Fast Delivery</h5>
+        <p class="small">Most projects completed in 7–10 days.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-hand-holding-usd fa-2x mb-2"></i>
+        <h5>Pay After Approval</h5>
+        <p class="small">You only pay when you're 100% satisfied.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="fas fa-headset fa-2x mb-2"></i>
+        <h5>Free Support</h5>
+        <p class="small">1 month free support after launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section with Functional Form -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-5">Let’s Work Together</h2>
+      <p class="lead text-secondary">Tell us about your project, and we’ll get back within 24 hours.</p>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Full Name</label>
+              <input type="text" class="form-control" id="name" required placeholder="e.g. Harry">
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Email Address</label>
+              <input type="email" class="form-control" id="email" required placeholder="hello@example.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Phone (WhatsApp)</label>
+              <input type="tel" class="form-control" id="phone" placeholder="0977xxxxxx">
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Service Needed</label>
+              <select class="form-select" id="service">
+                <option>Web Development</option>
+                <option>App Development</option>
+                <option>UI/UX Design</option>
+                <option>Network / ICT Support</option>
+                <option>School Digital Solution</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Project Details</label>
+              <textarea class="form-control" rows="4" id="message" placeholder="Describe your needs..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit w-100 text-white">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
+            <p class="small text-muted mt-3 text-center">We'll reply via WhatsApp or email within 24h.</p>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+          <h4 class="fw-bold mb-3"><i class="fas fa-map-marker-alt text-primary me-2"></i> Get in Touch</h4>
+          <p><i class="fab fa-whatsapp text-success me-2"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/260964173406" class="text-decoration-none">0964173406</a></p>
+          <p><i class="fas fa-phone-alt text-primary me-2"></i> <strong>Call:</strong> <a href="tel:+260964173406" class="text-decoration-none">0977 126251</a></p>
+          <p><i class="fas fa-envelope text-danger me-2"></i> <strong>Email:</strong> <a href="mailto:socialmedial19710@gmail.com" class="text-decoration-none">hello@nexorlabs.com</a></p>
+          <p><i class="fas fa-clock text-info me-2"></i> <strong>Support Hours:</strong> Mon–Sat, 8am – 6pm</p>
+          <hr>
+          <div class="mt-3">
+            <h5>Follow Nexor Labs</h5>
+            <div class="d-flex gap-3 mt-2">
+              <a href="#" class="btn btn-outline-dark rounded-circle" style="width: 44px; height: 44px;" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="btn btn-outline-dark rounded-circle" style="width: 44px; height: 44px;" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="btn btn-outline-dark rounded-circle" style="width: 44px; height: 44px;" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="btn btn-outline-dark rounded-circle" style="width: 44px; height: 44px;" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="btn btn-outline-dark rounded-circle" style="width: 44px; height: 44px;" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold">NEXOR LABS</h5>
+        <p class="small text-secondary">Smart Solutions for the Digital World.<br>We build, connect, and scale.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h6>Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="#home" class="text-secondary text-decoration-none">Home</a></li>
+          <li><a href="#services" class="text-secondary text-decoration-none">Services</a></li>
+          <li><a href="#portfolio" class="text-secondary text-decoration-none">Portfolio</a></li>
+          <li><a href="#contact" class="text-secondary text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h6>Connect With Us</h6>
+        <div class="social-icons">
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center pt-3 border-top border-secondary mt-2">
+      <p class="small text-secondary mb-0">&copy; 2025 Nexor Labs. All rights reserved. | ICTAZ Registered | Zambia</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Back to top button logic
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backBtn.classList.add('show');
+    } else {
+      backBtn.classList.remove('show');
+    }
+  });
+  backBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Contact form submission (alert + redirect to WhatsApp)
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+      
+      const fullMsg = `Hello Nexor Labs,%0A*New inquiry from website*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service:* ${encodeURIComponent(service)}%0A*Message:* ${encodeURIComponent(message)}`;
+      
+      // Open WhatsApp with prefilled message to your number
+      window.open(`https://wa.me/260964173406?text=${fullMsg}`, '_blank');
+      
+      // Also show success alert
+      alert(`Thank you ${name}! We've received your request and will respond via WhatsApp within 24 hours.`);
+      contactForm.reset();
+    });
+  }
+  
+  // Optional: track clicks on CTA buttons
+  console.log("Nexor Labs website ready — professional & interactive.");
+</script>
+</body>
+</html>
